@@ -1,7 +1,5 @@
 pipeline:
   docker:
-    environment:
-      - PLUGIN_DRY_RUN=true
     repo: armswarm/postgres
     build_args:
       - PG_VERSION=9.5.4-r0

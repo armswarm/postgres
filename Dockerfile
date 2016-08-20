@@ -14,7 +14,7 @@ RUN mkdir -p ${PGRUN} \
     && chown -R postgres ${PGRUN} \
     && mkdir /docker-entrypoint-initdb.d
 
-RUN apk add --no-cache --upgrade -X http://dl-cdn.alpinelinux.org/alpine/edge/main
+RUN apk add --no-cache --upgrade -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     bash \
     gosu=${GOSU_VERSION} \
     postgresql=${PG_VERSION} \
