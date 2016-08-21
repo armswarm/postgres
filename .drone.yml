@@ -7,3 +7,10 @@ pipeline:
       - "latest"
       - "9.5"
       - "9.5.4"
+    when:
+      branch: master
+      event: push
+
+  slack:
+    when:
+      status: [ failure, success ]

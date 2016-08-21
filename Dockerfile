@@ -1,6 +1,6 @@
 FROM armhf/alpine:latest
 
-LABEL repository="https://github.com/armswarm/image-postgres"
+LABEL repository="https://github.com/armswarm/postgres"
 
 ARG PG_VERSION
 
