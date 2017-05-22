@@ -1,17 +1,21 @@
+platform: linux/arm
+
+clone:
+  git:
+    image: armswarmdrone/git
+
 pipeline:
-  docker:
-    repo: armswarm/postgres
+  build_and_publish:
+    image: armswarmdrone/docker
+    repo: quay.io/armswarm/postgres
     build_args:
-      - PG_VERSION=9.5.4-r0
-      - VCS_REF=${DRONE_COMMIT_SHA}
-      - VCS_URL=${DRONE_REPO_LINK}
-      - BUILD_DATE=${DRONE_BUILD_CREATED}
-      - PROJECT_NAME=${DRONE_REPO}
-    tag: [ "latest", "9.5", "9.5.4" ]
+      - PG_PACKAGE=9.6.2-r0
+    tag: [ "9.6.2-alpine", "9.6-alpine", "9-alpine", "alpine" ]
     when:
       branch: master
       event: push
 
-  slack:
+  notify:
+    image: armswarmdrone/slack
     when:
       status: [ failure, success ]
