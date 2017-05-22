@@ -1,10 +1,12 @@
 FROM quay.io/armswarm/alpine:3.5
 
 ARG PG_PACKAGE
+ARG PG_VERSION
+ARG PG_MAJOR
 
 ENV LANG=en_US.utf8 \
-    PG_VERSION="${PG_PACKAGE%-*}" \
-    PG_MAJOR="${PG_PACKAGE%.?-*}" \
+    PG_VERSION=$PG_VERSION \
+    PG_MAJOR=$PG_MAJOR \
     PGDATA=/var/lib/postgresql/data
 
 COPY docker-entrypoint.sh /usr/local/bin
