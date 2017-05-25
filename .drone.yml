@@ -9,7 +9,7 @@ pipeline:
     image: armswarmdrone/docker
     repo: quay.io/armswarm/postgres
     build_args:
-      - PG_PACKAGE=9.6.2-r0
+      - PG_PACKAGE=9.6.2-r4
       - PG_VERSION=9.6.2
       - PG_MAJOR=9.6
     tag: [ "9.6.2-alpine", "9.6-alpine", "9-alpine", "alpine" ]

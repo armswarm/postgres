@@ -1,4 +1,4 @@
-FROM quay.io/armswarm/alpine:3.5
+FROM quay.io/armswarm/alpine:3.6
 
 ARG PG_PACKAGE
 ARG PG_VERSION
