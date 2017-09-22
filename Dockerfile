@@ -21,6 +21,7 @@ RUN \
         postgresql-contrib=${PG_PACKAGE} \
         tzdata \
   && sed -ri "s!^#?(listen_addresses)\s*=\s*\S+.*!\1 = '*'!" /usr/share/postgresql/postgresql.conf.sample \
+  && ln -s /var/run/postgresql/ /run/postgresql \
   && mkdir -p /var/run/postgresql \
   && chown -R postgres:postgres /var/run/postgresql \
   && chmod 2777 /var/run/postgresql \
