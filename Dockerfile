@@ -29,7 +29,7 @@ RUN \
   # this 777 will be replaced by 700 at runtime (allows semi-arbitrary "--user" values)
   && chmod 777 "$PGDATA"
 
-VOLUME ${PGDATA}
+VOLUME $${PGDATA}
 
 EXPOSE 5432
 
