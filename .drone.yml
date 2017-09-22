@@ -7,6 +7,7 @@ clone:
 pipeline:
   build_and_publish:
     image: quay.io/armswarm/drone-docker
+    secrets: [ docker_registry, docker_username, docker_password ]
     repo: quay.io/armswarm/postgres
     build_args:
       - PG_PACKAGE=9.6.5-r0
@@ -19,5 +20,6 @@ pipeline:
 
   notify:
     image: quay.io/armswarm/drone-slack
+    secrets: [ slack_webhook, plugin_channel, plugin_template ]
     when:
       status: [ failure, success ]
