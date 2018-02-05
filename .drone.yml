@@ -13,7 +13,7 @@ pipeline:
       - PG_PACKAGE=10.1-r1
       - PG_VERSION=10.1
       - PG_MAJOR=10
-    tag: [ 10.1-alpine", "10-alpine", "alpine" ]
+    tag: [ "10.1-alpine", "10-alpine", "alpine" ]
     when:
       branch: master
       event: push
