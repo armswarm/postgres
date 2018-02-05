@@ -10,10 +10,10 @@ pipeline:
     secrets: [ docker_registry, docker_username, docker_password ]
     repo: quay.io/armswarm/postgres
     build_args:
-      - PG_PACKAGE=9.6.5-r0
-      - PG_VERSION=9.6.5
-      - PG_MAJOR=9.6
-    tag: [ "9.6.5-alpine", "9.6-alpine", "9-alpine", "alpine" ]
+      - PG_PACKAGE=10.1-r1
+      - PG_VERSION=10.1
+      - PG_MAJOR=10
+    tag: [ 10.1-alpine", "10-alpine", "alpine" ]
     when:
       branch: master
       event: push
